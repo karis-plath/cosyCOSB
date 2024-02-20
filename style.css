@@ -1,0 +1,27 @@
+html {
+	background-color:rgba(219,221,234,255);
+}
+ 
+ /*login page*/
+#blur{
+    text-align: center;
+    font-size: 30px;
+    font-family:'Times New Roman', Times, serif;
+	color: white;
+}
+ 
+#clear{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width:490px;
+    max-width:490px;
+    min-height:360px;
+    max-height:360px;
+	background-color:rgba(104,94,121,255);
+    box-shadow: 8px 8px 8px 8px rgb(52, 52, 52);
+    border-radius: 25px;
+    padding: 50px;
+    backdrop-filter: blur(8px);
+}
