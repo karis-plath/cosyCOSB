@@ -2,39 +2,37 @@
     background: #ADB6C4;
 }
 
+input{
+  border-radius: 10px; /* You can adjust the radius value to your preference */
+  padding: 10px; /* Optional: Add some padding for better aesthetics */
+  border: 1px solid #2d2d34; /* Optional: Add a border for better visibility */
+}
+
 .container{
     padding-left: 200px;
     font-size: 18px;
     color: #2d2d34;
     text-align:left;
 }
+textarea{
+  border-radius: 10px; /* You can adjust the radius value to your preference */
+  padding: 10px; /* Optional: Add some padding for better aesthetics */
+  border: 1px solid #2d2d34; /* Optional: Add a border for better visibility */
 
-.sidenav {
-    height: 100%;
-    width: 200px; /* Adjust width as needed */
-    background-color: #4856f5;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-  }
-  
-  .sidenav a {
-    padding: 16px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #ffefd3;
-    background-color: #4856f5;
-    display: block;
-    text-align: center;
-    border-style:solid;
-    border-color: #2d2d34;
-    border-width: 1px;
-  }
-  
-  .sidenav a:hover {
-    background-color: #ffefd3;
-    color: #2d2d34;
-  }
-  
+  height: 300px;
+  width: 750px;
+  resize: none;
+}
+
+.ep{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  font-size: 18px;
+  color: #2d2d34;
+  text-align: left;
+}
+
+.p{
+  padding-left: 20px;
+}
