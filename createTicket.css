@@ -1,9 +1,14 @@
 *{
     background: #ADB6C4;
+    
+
 }
 
 .container{
     padding-left: 200px;
+    font-size: 18px;
+    color: #2d2d34;
+    text-align:left;
 }
 
 .sidenav {
