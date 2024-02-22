@@ -6,6 +6,7 @@ input{
   border-radius: 10px; /* You can adjust the radius value to your preference */
   padding: 10px; /* Optional: Add some padding for better aesthetics */
   border: 1px solid #2d2d34; /* Optional: Add a border for better visibility */
+  background: #cdd3db;
 }
 
 .container{
@@ -18,6 +19,8 @@ textarea{
   border-radius: 10px; /* You can adjust the radius value to your preference */
   padding: 10px; /* Optional: Add some padding for better aesthetics */
   border: 1px solid #2d2d34; /* Optional: Add a border for better visibility */
+  background: #cdd3db;
+
 
   height: 300px;
   width: 750px;
