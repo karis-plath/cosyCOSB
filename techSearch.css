@@ -3,6 +3,10 @@
     
 }
 
+.Header{
+  text-align: center;
+}
+
 .sidenav {
     height: 100%;
     width: 200px; /* Adjust width as needed */
@@ -50,6 +54,21 @@
 
 
   .labels label{
-    padding-left: 300px;
+    padding-left: 150px;
+  }
+
+  .results p {
+    height: 50px;
+    padding-left: 20px;
+    background-color: #ffefd3;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+  }
+
+  .results p:hover{
+    background-color:#adb6c4;
   }
   
