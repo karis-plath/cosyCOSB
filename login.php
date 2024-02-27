@@ -30,6 +30,7 @@
             // submitting new user and pass
             if (isset($_POST["submitNew"])) {
                 // go to the guest page
+                header("Location: ticketSearch.html");
             }
         
             if (isset($_POST['sub'])) {
