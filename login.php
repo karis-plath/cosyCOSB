@@ -34,12 +34,12 @@
         
             if (isset($_POST['sub'])) {
                 $servername = "localhost";
-                $username = "admin"; 
+                $useraccount = "admin"; 
                 $password = "admin"; 
-                $dbname = "dbname";
+                $dbname = "cs410_final";
         
                 // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
+                $conn = new mysqli($servername, $useraccount, $password, $dbname);
                 $check = 0;
 
                 // Check connection
@@ -50,21 +50,21 @@
                 // Use prepared statement in SQL
                 $name = $_POST['user'];
                 $pass = $_POST['pass'];
-                $sql = "SELECT * FROM login";
+                $sql = "SELECT * FROM employee";
         
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while ($row = $result->fetch_assoc()) { // info about query"https://www.w3schools.com/php/php_mysql_select.asp
-                        if ($row["username"] == $name) {
+                        if ($row["Employee_ID"] == $name) {
                             $check = 1;
-                            if ($row["password"] != $pass) {
+                            if ($row["Password"] != $pass) {
                                 echo '<script>alert("Username does not match password")</script>';
                             } else {
                                 echo "connected";
                                 session_start();
                                 $_SESSION["Username"] = $name;
-                                header("Location: decks.php");
+                                header("Location: ticketSearch.html");
                                 exit();
                             }
                         }
