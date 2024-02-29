@@ -11,15 +11,29 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `cs410_final`
 --
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `UserType` enum('admin','employee','guest') NOT NULL,
+  `Fname` varchar(64) NOT NULL,
+  `Lname` varchar(64) NOT NULL,
+  `Phone` int(11) NOT NULL,
+  `Email` varchar(64) NOT NULL,
+  Primary Key(Email)
+);
+
+-- creating users to login
+insert into `user` values('admin', "Karis", "Plath", 9525001298, "kPlath@gmail.com");
+insert into `user` values('admin', "Ethan", "Imm", 5076019459, "eImm@gmail.com");
+insert into `user` values('admin', "Matt", "Garling", 2243451465, "mGarling@gmail.com");
+insert into `user` values('admin', "Hunter", "Lee", 5079511622, "hLee@gmail.com");
+insert into `user` values('admin', "Colin", "Tolkkinen", 7633311872, "cTolkkinen@gmail.com");
 
 -- --------------------------------------------------------
 
@@ -30,15 +44,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `employee` (
   `Employee_ID` int(11) NOT NULL,
   `Password` varchar(64) NOT NULL,
-  `Email` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `Email` varchar(64) NOT NULL,
+  Primary Key(Employee_ID),
+  Foreign Key(Email) References user(Email)
+);
 
---
--- Dumping data for table `employee`
---
-
-INSERT INTO `employee` (`Employee_ID`, `Password`, `Email`) VALUES
-(1, 'password1234', 'karisplath@gmail.com');
+insert into `employee` values(0001, "1234", "kPlath@gmail.com");
+insert into `employee` values(0010, "5678", "eImm@gmail.com");
+insert into `employee` values(0011, "9101", "mGarling@gmail.com");
+insert into `employee` values(0100, "1121", "hLee@gmail.com");
+insert into `employee` values(0101, "3141", "cTolkkinen@gmail.com");
 
 -- --------------------------------------------------------
 
@@ -53,48 +68,12 @@ CREATE TABLE `ticket` (
   `Queue` enum('new','inprogress','closed','important') NOT NULL,
   `Status` enum('new','reopenned','closed') NOT NULL,
   `CreateDate` datetime NOT NULL,
-  `CloseDate` datetime NOT NULL,
+  `CloseDate` datetime,
   `TicketDesc` varchar(1000) NOT NULL,
-  `Email` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `Email` varchar(64) NOT NULL,
+  Primary Key(Ticket_ID),
+  Foreign Key(Email) References user(Email),
+  Foreign Key(Employee_ID) References employee(Employee_ID)
+);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `UserType` enum('admin','employee','guest') NOT NULL,
-  `Fname` varchar(64) NOT NULL,
-  `Lname` varchar(64) NOT NULL,
-  `Phone` int(11) NOT NULL,
-  `Email` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `employee`
---
-ALTER TABLE `employee`
-  ADD PRIMARY KEY (`Employee_ID`);
-
---
--- Indexes for table `ticket`
---
-ALTER TABLE `ticket`
-  ADD PRIMARY KEY (`Ticket_ID`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`Email`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+insert into `ticket` values(1, 0001, 5, 'new', 'new', '2024-02-29 13:00:12', NULL, "My computer is glued shut, I tried soaking it in water to soften the glue. The I put it in rice and tried restarting it. Nothings working??!!!", "kPlath@gmail.com");
