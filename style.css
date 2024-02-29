@@ -1,5 +1,5 @@
 html {
-	background-color:rgba(219,221,234,255);
+    background: #ADB6C4;
 }
  
  /*login page*/
@@ -19,7 +19,7 @@ html {
     max-width:490px;
     min-height:360px;
     max-height:360px;
-	background-color:rgba(104,94,121,255);
+    background-color: #4856f5;
     box-shadow: 8px 8px 8px 8px rgb(52, 52, 52);
     border-radius: 25px;
     padding: 50px;
