@@ -8,7 +8,7 @@
     <body id ="blur">
         <div>
             <div id ="clear">
-                <h1>Login</h1>
+                <h1>Employee Login</h1>
                 <form method=POST>
                     <div>
                         <input id="user" type="text" name="user" placeholder="Employee ID">
@@ -30,7 +30,7 @@
             // submitting new user and pass
             if (isset($_POST["submitNew"])) {
                 // go to the guest page
-                header("Location: ticketSearch.html");
+                header("Location: gCreateTicket.php");
             }
         
             if (isset($_POST['sub'])) {
