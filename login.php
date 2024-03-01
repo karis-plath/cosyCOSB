@@ -11,7 +11,7 @@
                 <h1>Login</h1>
                 <form method=POST>
                     <div>
-                        <input id="user" type="text" name="user" placeholder="Username">
+                        <input id="user" type="text" name="user" placeholder="Employee ID">
                     </div>
                     <div>
                         <input id="pass" type="password" name="pass" placeholder="Password">
@@ -56,7 +56,7 @@
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
-                    while ($row = $result->fetch_assoc()) { // info about query"https://www.w3schools.com/php/php_mysql_select.asp
+                    while ($row = $result->fetch_assoc()) { 
                         if ($row["Employee_ID"] == $name) {
                             $check = 1;
                             if ($row["Password"] != $pass) {
@@ -64,7 +64,8 @@
                             } else {
                                 echo "connected";
                                 session_start();
-                                $_SESSION["Username"] = $name;
+                                $_SESSION["Employee_ID"] = $row["Employee_ID"];
+                               // $_SESSION["Username"] = $name;
                                 header("Location: ticketSearch.html");
                                 exit();
                             }
