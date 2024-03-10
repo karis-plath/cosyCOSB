@@ -64,7 +64,7 @@ insert into `employee` values(0101, "3141", "cTolkkinen@gmail.com");
 CREATE TABLE `ticket` (
   `Ticket_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Employee_ID` int(11) NOT NULL,
-  `Importance` enum(1, 2, 3, 4, 5) NOT NULL,
+  `Importance` enum('1', '2', '3', '4', '5') NOT NULL,
   `Queue` enum('new','inprogress','closed','important') NOT NULL,
   `Status` enum('new','reopened','closed') NOT NULL,
   `CreateDate` datetime NOT NULL,
@@ -76,4 +76,5 @@ CREATE TABLE `ticket` (
   Foreign Key(Employee_ID) References employee(Employee_ID)
 );
 
-insert into `ticket` (Employee_ID, Importance, Queue, Status, CreateDate, CloseDate, TicketDesc, Email) values(0001, 5, 'new', 'new', '2024-02-29 13:00:12', NULL, "My computer is glued shut, I tried soaking it in water to soften the glue. Then I put it in rice and tried restarting it. Nothings working??!!!", "kPlath@gmail.com");
+insert into `ticket` (Employee_ID, Importance, Queue, Status, CreateDate, CloseDate, TicketDesc, Email) 
+values(0001, '5', 'new', 'new', '2024-02-29 13:00:12', NULL, "My computer is glued shut, I tried soaking it in water to soften the glue. Then I put it in rice and tried restarting it. Nothings working??!!!", "kPlath@gmail.com");
