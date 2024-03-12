@@ -66,7 +66,7 @@
                                 session_start();
                                 $_SESSION["Employee_ID"] = $row["Employee_ID"];
                                // $_SESSION["Username"] = $name;
-                                header("Location: ticketSearch.html");
+                                header("Location: ticketSearch.php");
                                 exit();
                             }
                         }
