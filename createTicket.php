@@ -11,6 +11,7 @@
         <a href="#">Queue</a>
         <a href="#">Docs</a>
         <a href="ticketSearch.php">Tickets</a>
+        <a href="createTicket.php">Create Tickets</a>
 
         <div class="userName">
 
@@ -80,9 +81,9 @@ if (isset($_SESSION["Employee_ID"])) {
     $stmt->execute();
     $stmt->bind_result($email);
 
-    // Fetch the result
+   
     if ($stmt->fetch()) {
-        // Now, $email contains the retrieved email
+       
         $stmt->close();
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
