@@ -1,72 +1,84 @@
 *{
-    background: #ADB6C4;
+  background: #f8fbff;
+}
+
+h1{
+  padding-left: 200px;
 }
 
 input{
-  border-radius: 10px; /* You can adjust the radius value to your preference */
-  padding: 10px; /* Optional: Add some padding for better aesthetics */
-  border: 1px solid #2d2d34; /* Optional: Add a border for better visibility */
-  background: #cdd3db;
+border-radius: 10px; /* You can adjust the radius value to your preference */
+padding: 10px; /* Optional: Add some padding for better aesthetics */
+background: #eff0f1;
+border-color: #eff0f1;
 }
 
 .container{
-    padding-left: 200px;
-    font-size: 18px;
-    color: #2d2d34;
-    text-align:left;
+  padding-left: 200px;
+  font-size: 18px;
+  text-align:left;
 }
+
 textarea{
-  border-radius: 10px; /* You can adjust the radius value to your preference */
-  padding: 10px; /* Optional: Add some padding for better aesthetics */
-  border: 1px solid #2d2d34; /* Optional: Add a border for better visibility */
-  background: #cdd3db;
-
-
-  height: 300px;
-  width: 750px;
-  resize: none;
+border-radius: 10px; /* You can adjust the radius value to your preference */
+padding: 10px; /* Optional: Add some padding for better aesthetics */  border: 1px solid #2d2d34; /* Optional: Add a border for better visibility */
+background: #eff0f1;
+height: 300px;
+width: 750px;
+resize: none;
+border-color: #eff0f1;
 }
 
-.ep{
+.page{
+  padding-top: 0%;
+  padding-left: 25px;
   display: flex;
   flex-direction: row;
   align-items: start;
-  font-size: 18px;
-  color: #2d2d34;
-  text-align: left;
-}
-.page{
-  padding-left: 200px;
-}
-.p{
-  padding-left: 20px;
 }
 
 .sidenav {
-  height: 100%;
-  width: 200px; /* Adjust width as needed */
-  background-color: #4856f5;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
+height: 100%;
+width: 200px; /* Adjust width as needed */
+background-color: #4856f5;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+overflow-x: hidden;
 }
 
 .sidenav a {
-  padding: 16px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #ffefd3;
-  background-color: #4856f5;
-  display: block;
-  text-align: center;
-  border-style:solid;
-  border-color: #2d2d34;
-  border-width: 1px;
+padding: 16px;
+text-decoration: none;
+font-size: 18px;
+color: #ffefd3;
+background-color: #4856f5;
+display: block;
+text-align: center;
+border-style:solid;
+border-color: #4856f5;
+border-width: 1px;
 }
 
 .sidenav a:hover {
-  background-color: #ffefd3;
-  color: #2d2d34;
+background-color: #727272;
+color: white;
+}
+
+button{
+  background-color: #4856f5;
+  border: none;
+  color: white;
+  padding: 12px 27px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+button:hover{
+  background-color: #727272;
+  color: white;
 }

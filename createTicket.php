@@ -18,7 +18,6 @@
     </div>
     <div class="page">
         <div>
-            <input type="submit" class="inputBtn" value="Back to home page">
             <div class="title">
                 <h1>Submit a ticket!</h1>
             </div>
