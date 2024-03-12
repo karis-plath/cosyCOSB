@@ -20,11 +20,11 @@
   </div>
   <?php
     session_start();
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+    //error_reporting(E_ALL);
+    //ini_set('display_errors', 1);
 
-    if (isset($_SESSION["Employee_ID"])) {
-      $employeeID = $_SESSION["Employee_ID"];
+    if (isset($_SESSION["User_ID"])) {
+      $User_ID = $_SESSION["User_ID"];
 
       $servername = "localhost";
       $useraccount = "admin"; 
@@ -39,8 +39,8 @@
       $stmt = $conn->stmt_init();
 
       // New code to fetch tickets for this employee
-      $stmt = $conn->prepare("SELECT Ticket_ID, Status FROM ticket WHERE Employee_ID = ?");
-      $stmt->bind_param("i", $employeeID);
+      $stmt = $conn->prepare("SELECT Ticket_ID, Status FROM ticket WHERE UserID = ?");
+      $stmt->bind_param("i", $User_ID);
       $stmt->execute();
       $result = $stmt->get_result();
 

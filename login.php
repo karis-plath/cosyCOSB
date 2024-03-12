@@ -17,7 +17,7 @@
                         <input id="pass" type="password" name="pass" placeholder="Password">
                     </div>
                     <button name="sub" type="submit">Login</button>
-                    <button name="submitNew" type="submit">Continue as Guest</button>
+                    <!-- <button name="submitNew" type="submit">Continue as Guest</button> -->
                 </form>
             </div>
         </div>
@@ -28,12 +28,9 @@
             ini_set('display_errors', 1);
             
             // submitting new user and pass
-            if (isset($_POST["submitNew"])) {
-                // go to the guest page
-                header("Location: gCreateTicket.php");
-            }
         
             if (isset($_POST['sub'])) {
+                //header("Location: gCreateTicket.php");
                 $servername = "localhost";
                 $useraccount = "admin"; 
                 $password = "admin"; 
@@ -51,20 +48,20 @@
                 // Use prepared statement in SQL
                 $name = $_POST['user'];
                 $pass = $_POST['pass'];
-                $sql = "SELECT * FROM employee";
+                $sql = "SELECT * FROM user";
         
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while ($row = $result->fetch_assoc()) { 
-                        if ($row["Employee_ID"] == $name) {
+                        if ($row["UserID"] == $name) {
                             $check = 1;
                             if ($row["Password"] != $pass) {
                                 echo '<script>alert("Username does not match password")</script>';
                             } else {
                                 echo "connected";
                                 session_start();
-                                $_SESSION["Employee_ID"] = $row["Employee_ID"];
+                                $_SESSION["User_ID"] = $row["UserID"];
                                // $_SESSION["Username"] = $name;
                                 header("Location: ticketSearch.php");
                                 exit();

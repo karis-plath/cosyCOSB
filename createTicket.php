@@ -58,8 +58,8 @@
 session_start();
 
 // Check if the Employee is logged in
-if (isset($_SESSION["Employee_ID"])) {
-    $employeeID = $_SESSION["Employee_ID"];
+if (isset($_SESSION["User_ID"])) {
+    $User_ID = $_SESSION["User_ID"];
 
     // Now, retrieve the email from the database using the Employee ID
     $servername = "localhost";
