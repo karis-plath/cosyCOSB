@@ -18,11 +18,11 @@
 
     </div>
   </div>
-  <div>
-    
-  </div>
   <?php
     session_start();
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
     if (isset($_SESSION["Employee_ID"])) {
       $employeeID = $_SESSION["Employee_ID"];
 
@@ -36,13 +36,7 @@
       if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
-
-      $stmt = $conn->prepare("SELECT Email FROM employee WHERE Employee_ID = ?");
-      $stmt->bind_param("i", $employeeID);
-      $stmt->execute();
-      $stmt->bind_result($email);
-
-      $stmt->close(); // Close the email retrieval statement
+      $stmt = $conn->stmt_init();
 
       // New code to fetch tickets for this employee
       $stmt = $conn->prepare("SELECT Ticket_ID, Status FROM ticket WHERE Employee_ID = ?");
@@ -52,10 +46,15 @@
 
       if ($result->num_rows > 0) {
         // We have tickets for this employee
+        echo '<div class="ticketinfo">';
         echo "<h2>Your Tickets</h2>";
+        echo '</div>';
+
         while($row = $result->fetch_assoc()) {
-          echo "<p>Ticket ID: " . $row["Ticket_ID"] . "</p>";
-          echo "<p>Status: " . $row["Status"] . "</p>";
+            echo '<div class="ticketinfo">';
+            echo "<p>Ticket ID: " . $row["Ticket_ID"] . " Status: " . $row["Status"] .  "</p>";
+            echo '</div>';
+            
         }
       } else {
         echo "You currently have no tickets.";
