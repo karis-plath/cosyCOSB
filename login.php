@@ -8,7 +8,7 @@
     <body id ="blur">
         <div>
             <div id ="clear">
-                <h1>Employee Login</h1>
+                <h1>Login</h1>
                 <form method=POST>
                     <div>
                         <input id="user" type="text" name="user" placeholder="Employee ID">
@@ -17,7 +17,7 @@
                         <input id="pass" type="password" name="pass" placeholder="Password">
                     </div>
                     <button name="sub" type="submit">Login</button>
-                    <button name="submitNew" type="submit">Guest</button>
+                    <button name="submitNew" type="submit">Continue as Guest</button>
                 </form>
             </div>
         </div>
