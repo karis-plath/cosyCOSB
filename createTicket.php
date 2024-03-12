@@ -10,7 +10,7 @@
         <a href="techSearch.html">Search</a>
         <a href="#">Queue</a>
         <a href="#">Docs</a>
-        <a href="ticketSearch.html">Tickets</a>
+        <a href="ticketSearch.php">Tickets</a>
 
         <div class="userName">
 
@@ -98,7 +98,7 @@ if (isset($_SESSION["Employee_ID"])) {
             
                 if ($conn->query($sql) === TRUE) {
                     // Redirect to a success page or display a success message
-                    header("Location: ticketSearch.html");
+                    header("Location: ticketSearch.php");
                     exit();
                 } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
