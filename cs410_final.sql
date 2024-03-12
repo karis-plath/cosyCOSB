@@ -20,40 +20,27 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user` (
-  `UserType` enum('admin','employee','guest') NOT NULL,
+  `UserID` int (8) NOT NULL,
+  `Password` varchar(64) NOT NULL,
   `Fname` varchar(64) NOT NULL,
   `Lname` varchar(64) NOT NULL,
   `Phone` int(11) NOT NULL,
   `Email` varchar(64) NOT NULL,
-  Primary Key(Email)
+  `UserType` enum ('guest','tech','admin') NOT NULL,
+  Primary Key(UserID)
 );
 
 -- creating users to login
-insert into `user` values('admin', "Karis", "Plath", 9525001298, "kPlath@gmail.com");
-insert into `user` values('admin', "Ethan", "Imm", 5076019459, "eImm@gmail.com");
-insert into `user` values('admin', "Matt", "Garling", 2243451465, "mGarling@gmail.com");
-insert into `user` values('admin', "Hunter", "Lee", 5079511622, "hLee@gmail.com");
-insert into `user` values('admin', "Colin", "Tolkkinen", 7633311872, "cTolkkinen@gmail.com");
+insert into `user` values(00000002, "Floop4Prez", "Robert", "California", 5955551496, "robcali@testmail.com", 'user');
+insert into `user` values(00000003, "SerialNum23", "Jared", "Ross", 5235550123, "jross@testmail.com", 'user');
+insert into `user` values(00000004, "Pass098", "Sophia", "Smith", 4565551233, "Sophia.Smith@testmail.com", 'user');
+insert into `user` values(00000005, "WeirdAlFan32", "Kristi", "Jones", 5955553312, "KrisJones@testmail.com", 'user');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `employee`
---
-
-CREATE TABLE `employee` (
-  `Employee_ID` int(11) NOT NULL,
-  `Password` varchar(64) NOT NULL,
-  `Email` varchar(64) NOT NULL,
-  Primary Key(Employee_ID),
-  Foreign Key(Email) References user(Email)
-);
-
-insert into `employee` values(0001, "1234", "kPlath@gmail.com");
-insert into `employee` values(0010, "5678", "eImm@gmail.com");
-insert into `employee` values(0011, "9101", "mGarling@gmail.com");
-insert into `employee` values(0100, "1121", "hLee@gmail.com");
-insert into `employee` values(0101, "3141", "cTolkkinen@gmail.com");
+insert into `user` values(00000001, "1234","Karis", "Plath", 9525551298,"kPlath@gmail.com", 'admin');
+insert into `user` values(00000010, "5678", "Ethan", "Imm", 5075559459, "eImm@gmail.com", 'admin');
+insert into `user` values(00000011, "9101", "Matt", "Garling", 2245551465, "mGarling@gmail.com", 'admin');
+insert into `user` values(00000100, "1121", "Hunter", "Lee", 5075551622, "hLee@gmail.com", 'admin');
+insert into `user` values(00000101, "3141", "Colin", "Tolkkinen", 7635551872, "cTolkkinen@gmail.com", 'admin');
 
 -- --------------------------------------------------------
 
@@ -63,8 +50,8 @@ insert into `employee` values(0101, "3141", "cTolkkinen@gmail.com");
 
 CREATE TABLE `ticket` (
   `Ticket_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Employee_ID` int(11) NOT NULL,
-  `Importance` enum('1', '2', '3', '4', '5') NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `Importance` enum('High', 'Medium', 'Low') NOT NULL,
   `Queue` enum('new','inprogress','closed','important') NOT NULL,
   `Status` enum('new','reopened','closed') NOT NULL,
   `CreateDate` datetime NOT NULL,
@@ -72,9 +59,7 @@ CREATE TABLE `ticket` (
   `TicketDesc` varchar(1000) NOT NULL,
   `Email` varchar(64) NOT NULL,
   Primary Key(Ticket_ID),
-  Foreign Key(Email) References user(Email),
-  Foreign Key(Employee_ID) References employee(Employee_ID)
+  Foreign Key(UserID) References user(UserID)
 );
 
-insert into `ticket` (Employee_ID, Importance, Queue, Status, CreateDate, CloseDate, TicketDesc, Email) 
-values(0001, '5', 'new', 'new', '2024-02-29 13:00:12', NULL, "My computer is glued shut, I tried soaking it in water to soften the glue. Then I put it in rice and tried restarting it. Nothings working??!!!", "kPlath@gmail.com");
+insert into `ticket` (UserID, Importance, Queue, Status, CreateDate, CloseDate, TicketDesc, Email) values(00000001, 'High', 'new', 'new', '2024-02-29 13:00:12', NULL, "My computer is glued shut, I tried soaking it in water to soften the glue. Then I put it in rice and tried restarting it. Nothings working??!!!", "kPlath@gmail.com");
