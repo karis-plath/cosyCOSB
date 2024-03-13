@@ -1,35 +1,35 @@
 html {
-    background: #f8fbff;
+  background: #f8fbff;
 }
  
- /*login page*/
- #blur{
-    text-align: center;
-    font-size: 30px;
-    font-family:'Times New Roman', Times, serif;
+/*login page*/
+.login{
+  text-align: center;
+  font-size: 30px;
+  font-family:'Times New Roman', Times, serif;
 	color: white;
 }
  
-#clear{
-    position: absolute;
-    width: 20%;
-    height: 45%;
-    background-color: #4856f5;
-    box-shadow: 8px 8px 8px 8px rgb(122, 122, 122);
-    border-radius: 25px;
-    padding: 35px;
-    top: 20%;
-    left: 37%;
+.loginBox{
+  position: absolute;
+  width: 20%;
+  height: 45%;
+  background-color: #4856f5;
+  box-shadow: 8px 8px 8px 8px rgb(122, 122, 122);
+  border-radius: 25px;
+  padding: 35px;
+  top: 20%;
+  left: 37%;
 }
 
-#clear input {
-    width: 75%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+.loginBox input {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
-#clear button{
+.loginBox button{
   background-color: #f8fbff;
   border: none;
   color: rgb(0, 0, 0);
@@ -41,7 +41,78 @@ html {
   margin-top: 15px;
 }
 
-#clear button:hover{
+.loginBox button:hover{
   background-color: #727272;
   color: white;
 }
+
+/* create Ticket  */
+
+.title{
+  padding-left: 200px;
+}
+
+.createTicket input{
+border-radius: 10px; /* You can adjust the radius value to your preference */
+padding: 10px; /* Optional: Add some padding for better aesthetics */
+background: #eff0f1;
+border-color: #eff0f1;
+}
+
+.container{
+  padding-left: 200px;
+  font-size: 18px;
+  text-align:left;
+}
+
+.createTicket textarea{
+border-radius: 10px; /* You can adjust the radius value to your preference */
+padding: 10px; /* Optional: Add some padding for better aesthetics */  
+border: 1px solid #2d2d34; /* Optional: Add a border for better visibility */
+background: #eff0f1;
+height: 300px;
+width: 750px;
+resize: none;
+border-color: #eff0f1;
+}
+
+.createTicket{
+  padding-top: 0%;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+
+/* menu  */
+.sidenav {
+height: 100%;
+width: 200px; /* Adjust width as needed */
+background-color: #4856f5;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+overflow-x: hidden;
+}
+
+.sidenav a {
+padding: 16px;
+text-decoration: none;
+font-size: 18px;
+color: #ffefd3;
+background-color: #4856f5;
+display: block;
+text-align: center;
+border-style:solid;
+border-color: #4856f5;
+border-width: 1px;
+}
+
+.sidenav a:hover {
+background-color: #727272;
+color: white;
+}
+
+

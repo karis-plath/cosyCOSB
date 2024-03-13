@@ -3,24 +3,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Ticket</title>
-    <link rel="stylesheet" href="createTicket.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="sidenav">
-            <?php
-                session_start();
-                if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
-                    echo '<a href="techSearch.php">Search</a>';
-                    echo '<a href="queue.php">Queue</a>';
-                }
-            ?>
-            <a href="#">Docs</a>
-            <a href="ticketSearch.php">Tickets</a>
-            <a href="createTicket.php">Create Tickets</a>
-    </div>
+    <?php
+        session_start();
+        if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
+            echo '<a href="techSearch.php">Search</a>';
+            echo '<a href="queue.php">Queue</a>';
+        }
+    ?>
 
-    <div class="page">
+    <a href="#">Docs</a>
+    <a href="ticketSearch.php">Tickets</a>
+    <a href="createTicket.php">Create Tickets</a>
+</div>
+
+<div class="createTicket">
         <div>
             <div class="title">
                 <h1>Submit a ticket!</h1>
@@ -47,6 +48,7 @@
             <br>
         </div>
 </div>
+
 <?php
 // Check if the Employee is logged in
 if (isset($_SESSION["User_ID"])) {

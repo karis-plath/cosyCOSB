@@ -5,9 +5,9 @@
         <title>Login</title>
     </head>
 
-    <body id ="blur">
+    <body class ="login">
         <div>
-            <div id ="clear">
+            <div class ="loginBox">
                 <h1>Login</h1>
                 <form method=POST>
                     <div>
