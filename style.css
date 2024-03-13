@@ -115,4 +115,43 @@ background-color: #727272;
 color: white;
 }
 
+/* tech search  */
+.Header{
+  text-align: center;
+}
+  
+  .main-content {
+    margin-left: 200px; /* Same width as sidenav */
+    padding: 0px 20px;
+    
+  }
 
+  .searchbar{
+    text-align: center;
+    padding-top: 5%;
+  }
+
+  .labels{
+    padding-top: 5%;
+    padding-left: 0px;
+  }
+
+
+  .labels label{
+    padding-left: 150px;
+  }
+
+  .results p {
+    height: 50px;
+    padding-left: 20px;
+    background-color: #ffefd3;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+  }
+
+  .results p:hover{
+    background-color:#adb6c4;
+  }
