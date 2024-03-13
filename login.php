@@ -62,7 +62,7 @@
                                 echo "connected";
                                 session_start();
                                 $_SESSION["User_ID"] = $row["UserID"];
-                               // $_SESSION["Username"] = $name;
+                                $_SESSION["User_Type"] = $row["UserType"];
                                 header("Location: ticketSearch.php");
                                 exit();
                             }

@@ -5,18 +5,21 @@
     <title>Create Ticket</title>
     <link rel="stylesheet" href="createTicket.css">
 </head>
-<body>    
-    <div class="sidenav">
-        <a href="techSearch.html">Search</a>
-        <a href="#">Queue</a>
-        <a href="#">Docs</a>
-        <a href="ticketSearch.php">Tickets</a>
-        <a href="createTicket.php">Create Tickets</a>
+<body>
 
-        <div class="userName">
-
-        </div>
+<div class="sidenav">
+            <?php
+                session_start();
+                if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
+                    echo '<a href="techSearch.php">Search</a>';
+                    echo '<a href="queue.php">Queue</a>';
+                }
+            ?>
+            <a href="#">Docs</a>
+            <a href="ticketSearch.php">Tickets</a>
+            <a href="createTicket.php">Create Tickets</a>
     </div>
+
     <div class="page">
         <div>
             <div class="title">
@@ -24,17 +27,8 @@
             </div>
             <div class="container">
                 <form action="createTicket.php" method="post">
-                    <!-- <div>
-                        <label for="eID">Employee Number</label>
-                        <input type="number" id="eID" name="eID" placeholder="0000" required>
-                    </div>
-                    <br> -->
+                    
                     <div class="ep">
-                        <!-- <div>
-                            <label for="email">Email address: </label>
-                            <input type="email" id="email" name="email" placeholder="example@email.com" size="30" required>
-                        </div>
-                        <br> -->
                         <div class="">
                             <label for="phone">Phone number:</label>
                             <input type="tel" id="phone" name="phone" placeholder="507-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
@@ -54,9 +48,6 @@
         </div>
 </div>
 <?php
-// At the beginning of createTicket.php
-session_start();
-
 // Check if the Employee is logged in
 if (isset($_SESSION["User_ID"])) {
     $User_ID = $_SESSION["User_ID"];
@@ -76,8 +67,8 @@ if (isset($_SESSION["User_ID"])) {
     }
 
     // Use prepared statement to retrieve email using Employee ID
-    $stmt = $conn->prepare("SELECT Email FROM employee WHERE Employee_ID = ?");
-    $stmt->bind_param("i", $employeeID);
+    $stmt = $conn->prepare("SELECT Email FROM user WHERE UserID = ?");
+    $stmt->bind_param("i", $User_ID);
     $stmt->execute();
     $stmt->bind_result($email);
 
@@ -91,10 +82,9 @@ if (isset($_SESSION["User_ID"])) {
                 $phone = $_POST['phone'];
                 $issue = $_POST['pDrescription'];
             
-                echo $employeeID, $issue, $email;
+                echo $User_ID, $issue, $email;
                 //Insert into DB
-                // $sql = "INSERT INTO ticket (Employee_ID, email, TicketDesc) VALUES ('$employeeNum', '$email', '$issue')";
-                $sql = "INSERT INTO ticket (Employee_ID, Importance, Queue, Status, CreateDate, CloseDate, TicketDesc, Email) VALUES ('$employeeID', 1, 'new', 'new', NOW(), NULL, '$issue', '$email')";
+                $sql = "INSERT INTO ticket (UserID, Importance, Queue, Status, CreateDate, CloseDate, TicketDesc, Email) VALUES ('$User_ID', 'Low', 'new', 'new', NOW(), NULL, '$issue', '$email')";
             
                 if ($conn->query($sql) === TRUE) {
                     // Redirect to a success page or display a success message

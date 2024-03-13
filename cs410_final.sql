@@ -26,7 +26,7 @@ CREATE TABLE `user` (
   `Lname` varchar(64) NOT NULL,
   `Phone` int(11) NOT NULL,
   `Email` varchar(64) NOT NULL,
-  `UserType` enum ('guest','tech','admin') NOT NULL,
+  `UserType` enum ('user','tech','admin') NOT NULL,
   Primary Key(UserID)
 );
 

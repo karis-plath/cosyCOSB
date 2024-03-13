@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tickets</title>
-  <link rel="stylesheet" href="ticketSearch.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queuest</title>
+    <link rel="stylesheet" href="ticketSearch.css">
 </head>
 <body>
-
-  <div class="sidenav">
+    <div class="sidenav">
+        <?php
+            session_start();
+            if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
+                echo '<a href="techSearch.php">Search</a>';
+                echo '<a href="queue.php">Queue</a>';
+            }
+        ?>
+        <a href="#">Docs</a>
+        <a href="ticketSearch.php">Tickets</a>
+        <a href="createTicket.php">Create Tickets</a>
+        <form action="logout.php" method="post">
+            <input type="submit" class="inputBtn" name="logout" value="Logout">
+        </form>
+    </div>
     <?php
-      session_start();
-      if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
-        echo '<a href="techSearch.php">Search</a>';
-        echo '<a href="queue.php">Queue</a>';
-      }
-    ?>
-    <a href="#">Docs</a>
-    <a href="ticketSearch.php">Tickets</a>
-    <a href="createTicket.php">Create Tickets</a>
-  </div>
-  
-  <?php
     //error_reporting(E_ALL);
     //ini_set('display_errors', 1);
 
@@ -41,20 +42,22 @@
       $stmt = $conn->stmt_init();
 
       // New code to fetch tickets for this employee
-      $stmt = $conn->prepare("SELECT Ticket_ID, Status FROM ticket WHERE UserID = ?");
-      $stmt->bind_param("i", $User_ID);
+      $stmt = $conn->prepare("SELECT * FROM ticket WHERE Status != 'closed'");
+    //   $stmt->bind_param("i", $User_ID);
       $stmt->execute();
       $result = $stmt->get_result();
 
       if ($result->num_rows > 0) {
         // We have tickets for this employee
         echo '<div class="ticketinfo">';
-        echo "<h2>Your Tickets</h2>";
+        echo "<h2>Open Tickets</h2>";
         echo '</div>';
 
         while($row = $result->fetch_assoc()) {
             echo '<div class="ticketinfo">';
-            echo "<p>Ticket ID: " . $row["Ticket_ID"] . " Status: " . $row["Status"] .  "</p>";
+            echo "<p>Ticket ID: " . $row["Ticket_ID"] . " Importance: " . $row["Importance"] .  "</p>";
+            echo "<p>Queue: " . $row["Queue"] . " Create Date: " . $row["CreateDate"] .  "</p>";
+            echo "<p>Issue: " . $row["TicketDesc"] . " Email: " . $row["Email"] .  "</p>";
             echo '</div>';
             
         }
@@ -72,5 +75,6 @@
       exit();
     }
   ?>
+    
 </body>
 </html>
