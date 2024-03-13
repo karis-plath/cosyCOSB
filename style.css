@@ -155,3 +155,9 @@ color: white;
   .results p:hover{
     background-color:#adb6c4;
   }
+
+/* ticket search  */
+
+.ticketinfo {
+  padding-left: 200px; /* Adjust the margin as needed */
+}
