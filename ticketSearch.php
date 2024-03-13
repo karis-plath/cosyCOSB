@@ -7,19 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="sidenav">
-    <?php
-      session_start();
-      if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
-        echo '<a href="techSearch.php">Search</a>';
-        echo '<a href="queue.php">Queue</a>';
-      }
-    ?>
-    <a href="#">Docs</a>
-    <a href="ticketSearch.php">Tickets</a>
-    <a href="createTicket.php">Create Tickets</a>
-  </div>
+<?php include ("menu.php")?>
   
   <?php
     //error_reporting(E_ALL);
