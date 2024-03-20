@@ -70,10 +70,10 @@ insert into `ticket` (UserID, Importance, Queue, Status, CreateDate, CloseDate, 
 -- Table structure for table 'document'
 --
 
-CREATE TABLE 'document' (
-    'id' INT AUTO_INCREMENT PRIMARY KEY,
-    'doc_name' VARCHAR(255) NOT NULL,
-    'doc_content' TEXT NOT NULL
+CREATE TABLE `document` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `doc_name` VARCHAR(255) NOT NULL,
+    `doc_content` TEXT NOT NULL
 );
 
-INSERT INTO 'document' (doc_name, doc_content) VALUES ('example', 'This is the content of the text file.');
+INSERT INTO `document` (doc_name, doc_content) VALUES (`example`, `This is the content of the text file.`);
