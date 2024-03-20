@@ -76,4 +76,4 @@ CREATE TABLE `document` (
     `doc_content` TEXT NOT NULL
 );
 
-INSERT INTO `document` (doc_name, doc_content) VALUES (`example`, `This is the content of the text file.`);
+INSERT INTO `document` (doc_name, doc_content) VALUES ('example', "This is the content of the text file.");
