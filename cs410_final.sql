@@ -63,3 +63,17 @@ CREATE TABLE `ticket` (
 );
 
 insert into `ticket` (UserID, Importance, Queue, Status, CreateDate, CloseDate, TicketDesc, Email) values(00000001, 'High', 'new', 'new', '2024-02-29 13:00:12', NULL, "My computer is glued shut, I tried soaking it in water to soften the glue. Then I put it in rice and tried restarting it. Nothings working??!!!", "kPlath@gmail.com");
+
+-- --------------------------------------------------------------
+
+--
+-- Table structure for table 'document'
+--
+
+CREATE TABLE 'document' (
+    'id' INT AUTO_INCREMENT PRIMARY KEY,
+    'doc_name' VARCHAR(255) NOT NULL,
+    'doc_content' TEXT NOT NULL
+);
+
+INSERT INTO 'document' (doc_name, doc_content) VALUES ('example', 'This is the content of the text file.');
