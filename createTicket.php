@@ -64,7 +64,7 @@
 
                                     // Close the statement and connection
                                     $stmt->close();
-
+                                    
                                     echo '<label for="Lname">Last Name: </label>';
                                     echo '<input type="text" id="Lname" name="Lname" value="' . $Lname . '" readonly>';
 
@@ -81,6 +81,7 @@
                                     // Close the statement and connection
                                     $stmt->close();
 
+                                    
                                     echo '<label for="email">Phone Number: </label>';
                                     echo '<input type="tel" id="phone" name="phone" value="' . $phone . '" readonly>';
 

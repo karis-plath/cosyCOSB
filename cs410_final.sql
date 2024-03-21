@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE if not EXISTS `user`(
   `UserID` int (8) NOT NULL,
   `Password` varchar(64) NOT NULL,
   `Fname` varchar(64) NOT NULL,
@@ -48,7 +48,7 @@ insert into `user` values(00000101, "3141", "Colin", "Tolkkinen", 7635551872, "c
 -- Table structure for table `ticket`
 --
 
-CREATE TABLE `ticket` (
+CREATE TABLE if NOT EXISTS `ticket` (
   `Ticket_ID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
   `Importance` enum('High', 'Medium', 'Low') NOT NULL,
@@ -70,10 +70,11 @@ insert into `ticket` (UserID, Importance, Queue, Status, CreateDate, CloseDate, 
 -- Table structure for table 'document'
 --
 
-CREATE TABLE `document` (
+CREATE TABLE if NOT EXISTS `document` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `doc_name` VARCHAR(255) NOT NULL,
-    `doc_content` TEXT NOT NULL
+    `doc_content` TEXT NOT NULL,
+    `public` boolean
 );
 
-INSERT INTO `document` (doc_name, doc_content) VALUES ('example', "This is the content of the text file.");
+INSERT INTO `document` (doc_name, doc_content, public) VALUES ('example', "This is the content of the text file.", true);

@@ -7,7 +7,7 @@
         }
     ?>
 
-    <a href="#">Docs</a>
+    <a href="docs.php">Docs</a>
     <a href="ticketSearch.php">Tickets</a>
     <a href="createTicket.php">Create Tickets</a>
     <form action="logout.php" method="post">
