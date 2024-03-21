@@ -19,8 +19,88 @@
                     
                     <div class="ep">
                         <div class="">
-                            <label for="phone">Phone number:</label>
-                            <input type="tel" id="phone" name="phone" placeholder="507-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                            <?php
+                                if (isset($_SESSION["User_ID"])) {
+                                    $User_ID = $_SESSION["User_ID"];
+                                
+                                    // Now, retrieve the email from the database using the Employee ID
+                                    $servername = "localhost";
+                                    $useraccount = "admin"; 
+                                    $password = "admin"; 
+                                    $dbname = "cs410_final";
+                                
+                                    // Create connection
+                                    $conn = new mysqli($servername, $useraccount, $password, $dbname);
+                                
+                                    // Check connection
+                                    if ($conn->connect_error) {
+                                        die("Connection failed: " . $conn->connect_error);
+                                    }
+
+                                    
+                                    //Retrieve First Name
+                                    $stmt = $conn->prepare("SELECT Fname FROM user WHERE UserID = ?");
+                                    $stmt->bind_param("i", $User_ID);
+                                    $stmt->execute();
+                                    $stmt->bind_result($Fname);
+
+                                    // Fetch the result
+                                    $stmt->fetch();
+
+                                    // Close the statement and connection
+                                    $stmt->close();
+
+                                    echo '<label for="Fname">First Name: </label>';
+                                    echo '<input type="text" id="Fname" name="Fname" value="' . $Fname . '" readonly>';
+
+                                    //Retrieve Last Name
+                                    $stmt = $conn->prepare("SELECT Lname FROM user WHERE UserID = ?");
+                                    $stmt->bind_param("i", $User_ID);
+                                    $stmt->execute();
+                                    $stmt->bind_result($Lname);
+
+                                    // Fetch the result
+                                    $stmt->fetch();
+
+                                    // Close the statement and connection
+                                    $stmt->close();
+
+                                    echo '<label for="Lname">Last Name: </label>';
+                                    echo '<input type="text" id="Lname" name="Lname" value="' . $Lname . '" readonly>';
+
+
+                                    //Retrieve Phone number
+                                    $stmt = $conn->prepare("SELECT phone FROM user WHERE UserID = ?");
+                                    $stmt->bind_param("i", $User_ID);
+                                    $stmt->execute();
+                                    $stmt->bind_result($phone);
+
+                                    // Fetch the result
+                                    $stmt->fetch();
+
+                                    // Close the statement and connection
+                                    $stmt->close();
+
+                                    echo '<label for="email">Phone Number: </label>';
+                                    echo '<input type="tel" id="phone" name="phone" value="' . $phone . '" readonly>';
+
+                                    // Use prepared statement to retrieve email using Employee ID
+                                    $stmt = $conn->prepare("SELECT Email FROM user WHERE UserID = ?");
+                                    $stmt->bind_param("i", $User_ID);
+                                    $stmt->execute();
+                                    $stmt->bind_result($email);
+
+                                    // Fetch the result
+                                    $stmt->fetch();
+
+                                    // Close the statement and connection
+                                    $stmt->close();
+                                    //$conn->close();
+
+                                    echo '<label for="email">Email:</label>';
+                                    echo '<input type="email" id="email" name="email" value="' . $email . '" readonly>';
+                                }
+                            ?>
                         </div>
                     </div>
                     <br>
@@ -29,6 +109,23 @@
                     <br>
                     <br>
                     <textarea id="pDrescription" name="pDrescription" required placeholder="Computer is running slow"></textarea>
+            </div>
+            <div>
+             <label for="Importance">Urgency: </label>
+              <select id="importance" name="importance">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+             <br>
+                            
+             <label for="Category">Category: </label>
+             <select id="category" name="category">
+                    <option value="none">None</option>
+                    <option value="Placeholder2">Placeholder2</option>
+                    <option value="Placeholder3">Placeholder3</option>
+                </select>
             </div>
             <br>
             <input type="submit" class="inputBtn" value="Submit Ticket">
