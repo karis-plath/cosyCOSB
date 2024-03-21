@@ -169,3 +169,8 @@ html {
 .ticketinfo {
   padding-left: 200px; /* Adjust the margin as needed */
 }
+
+/* docs page */
+.doc-button {
+  padding-left: 200px;
+}

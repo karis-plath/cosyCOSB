@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>run</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<?php
+    if (isset($_POST["document_id"])) {
+    $id = $_POST["id"];
+
+    $servername = "localhost";
+    $useraccount = "admin";
+    $password = "admin";
+    $dbname = "cs410_final";
+        
+    $conn = new mysqli($servername, $useraccount, $password, $dbname);
+        
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $stmt = $conn->stmt_init();
+    
+    
+
+    $sql = "SELECT doc_name, description FROM document WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $document_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+  if ($result->num_rows == 1) {
+    $document = $result->fetch_assoc();
+    echo "<h2>" . $document['doc_name'] . "</h2>";
+    echo "<p>" . $document['doc_content'] . "</p>";
+  } else {
+    echo "Document not found!";
+  }
+} else {
+  echo "Invalid access!";
+}
+?>
+
+</body>
+</html>

@@ -8,13 +8,13 @@
 </head>
 <body>
     <!-- <?php include("connectionDB.php")?> -->
-    <?php include ("menu.php")?>
+    <!-- <?php include ("menu.php")?> -->
     <?php
         if (isset($_SESSION["User_ID"])) {
             $User_ID = $_SESSION["User_ID"];
             
             $servername = "localhost";
-            $useraccount = "admin"; 
+            $useraccount = "admin";
             $password = "admin";
             $dbname = "cs410_final";
             
@@ -29,7 +29,35 @@
             header("Location: login.php");
             exit();
         }
+
+        $stmt = $conn->prepare("SELECT * FROM document");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            $documents = array();
+            while($row = $result->fetch_assoc()) {
+              $documents[] = $row;
+            }
+          } else {
+            echo "No documentation found!";
+          }
         
-    ?>    
+    ?>  
+    
+    
+    <?php
+        if (isset($documents)) {
+            foreach ($documents as $document) {
+    ?>
+    <form action="pullDocuments.php" method="post">
+        <button type="submit" name="document_id" value="<?php echo $document['id']; ?>" class="doc-button">
+        <?php echo $document['doc_name']; ?>
+        </button>
+    </form>
+    <?php
+  }
+}
+?>
+
 </body>
 </html>
