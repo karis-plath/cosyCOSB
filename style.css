@@ -162,10 +162,7 @@ html {
   background-color:#adb6c4;
 }
 
-
-
 /* ticket search  */
-
 .ticketinfo {
   padding-left: 200px; /* Adjust the margin as needed */
 }
@@ -175,13 +172,7 @@ html {
   padding-left: 200px;
 }
 
-.documentcontent{
-  color: red;
-}
-
 .doc_content{
   color: #4856f5;
-}
-#doc_content{
-  color: #4856f5;
+  padding-left: 200px;
 }
