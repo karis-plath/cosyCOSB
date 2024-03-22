@@ -9,7 +9,7 @@
 <body>
 <?php
     if (isset($_POST["document_id"])) {
-    $id = $_POST["id"];
+    $document_id = $_POST["document_id"];
 
     $servername = "localhost";
     $useraccount = "admin";
@@ -25,7 +25,7 @@
     
     
 
-    $sql = "SELECT doc_name, description FROM document WHERE id = ?";
+    $sql = "SELECT doc_name, doc_content FROM document WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $document_id);
     $stmt->execute();
@@ -33,8 +33,12 @@
 
   if ($result->num_rows == 1) {
     $document = $result->fetch_assoc();
+
+    echo "<div class='doc_content' id='doc_content'>";
     echo "<h2>" . $document['doc_name'] . "</h2>";
     echo "<p>" . $document['doc_content'] . "</p>";
+    echo "</div>";
+
   } else {
     echo "Document not found!";
   }
@@ -42,6 +46,6 @@
   echo "Invalid access!";
 }
 ?>
-
+<!-- <div class="content"></div> -->
 </body>
 </html>

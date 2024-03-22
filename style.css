@@ -174,3 +174,14 @@ html {
 .doc-button {
   padding-left: 200px;
 }
+
+.documentcontent{
+  color: red;
+}
+
+.doc_content{
+  color: #4856f5;
+}
+#doc_content{
+  color: #4856f5;
+}
