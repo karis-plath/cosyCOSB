@@ -191,3 +191,10 @@ html {
   text-align: center;
 
 }
+
+/* queue */
+.ticketinfo{
+  color: black;
+  border-bottom: 2px solid;
+  border-color:black;
+}
