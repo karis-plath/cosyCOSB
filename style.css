@@ -91,9 +91,10 @@ html {
 /* menu  */
 
 .sidenav {
+  
   height: 100%;
   width: 200px;
-  background-color: #4856f5;
+  background-color: #4856f5 !important;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -175,4 +176,5 @@ html {
 .doc_content{
   color: #4856f5;
   padding-left: 200px;
+
 }

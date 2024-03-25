@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include ("menu.php")?>
 <?php
     if (isset($_POST["document_id"])) {
     $document_id = $_POST["document_id"];
