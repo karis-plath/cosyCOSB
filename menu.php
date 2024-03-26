@@ -4,6 +4,7 @@
         if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
             echo '<a href="techSearch.php">Search</a>';
             echo '<a href="queue.php">Queue</a>';
+            
         }
     ?>
 
