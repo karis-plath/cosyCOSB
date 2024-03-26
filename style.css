@@ -46,8 +46,6 @@ html {
   color: white;
 }
 
-
-
 /* create Ticket  */
 
 .title{
@@ -172,29 +170,44 @@ html {
 .doc-button{
   padding-left: 200px;
   font-size: 1px;
+  text-align: center;
 }
 
 /* docs page */
 .doc-button button{
   color: red;
+  width: 50%;
   font-size: 20px;
-  border-radius: 15px;
+  border-radius: 8px;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.doc-button button :hover{
-  background-color: #4856f5;
+.doc-button:hover{
+  /* background-color: #4856f5; */
 }
 
 .doc_content{
-  color: #4856f5;
   padding-left: 200px;
+}
+.doc-h{
+  color: #2d2d34;
+  font-size: 35px;
   text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px #2d2d34 solid;
+  }
 
+.doc-p{
+  color:blue;
+  font-size:20px;
 }
 
 /* queue */
 .ticketinfo{
-  color: black;
+  color: #2d2d34;
   border-bottom: 2px solid;
-  border-color:black;
+  border-color:#2d2d34;
 }

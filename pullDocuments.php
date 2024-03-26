@@ -36,8 +36,8 @@
     $document = $result->fetch_assoc();
 
     echo "<div class='doc_content' id='doc_content'>";
-    echo "<h2>" . $document['doc_name'] . "</h2>";
-    echo "<p>" . $document['doc_content'] . "</p>";
+    echo "<p class='doc-h'>" . $document['doc_name'] . "</h2>";
+    echo "<p class='doc-p'>" . $document['doc_content'] . "</p>";
     echo "</div>";
 
   } else {
