@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- <?php include("connectionDB.php")?> -->
-    <!-- <?php include ("menu.php")?> -->
+    <?php include ("menu.php")?>
     <?php
         if (isset($_SESSION["User_ID"])) {
             $User_ID = $_SESSION["User_ID"];
@@ -49,11 +49,17 @@
         if (isset($documents)) {
             foreach ($documents as $document) {
     ?>
-    <form action="pullDocuments.php" method="post">
-        <button type="submit" name="document_id" value="<?php echo $document['id']; ?>" class="doc-button">
-        <?php echo $document['doc_name']; ?>
-        </button>
-    </form>
+    <div class="doc-button">
+        <form action="pullDocuments.php" method="post">
+            <button type="submit" name="document_id" value="<?php echo $document['id']; ?>">
+            <?php 
+            
+                echo $document['doc_name'];
+
+                ?>  
+            </button>
+        </form>
+    </div>
     <?php
   }
 }

@@ -12,6 +12,6 @@
     <a href="ticketSearch.php">Tickets</a>
     <a href="createTicket.php">Create Tickets</a>
     <form action="logout.php" method="post">
-        <input type="submit" class="inputBtn" name="logout" value="Logout">
+        <input type="submit" class="logoutBtn" name="logout" value="Logout">
     </form>
 </div>

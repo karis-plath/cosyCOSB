@@ -91,9 +91,10 @@ html {
 /* menu  */
 
 .sidenav {
+  
   height: 100%;
   width: 200px;
-  background-color: #4856f5;
+  background-color: #4856f5 !important;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -168,11 +169,32 @@ html {
 }
 
 /* docs page */
-.doc-button {
+.doc-button{
   padding-left: 200px;
+  font-size: 1px;
+}
+
+/* docs page */
+.doc-button button{
+  color: red;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+.doc-button button :hover{
+  background-color: #4856f5;
 }
 
 .doc_content{
   color: #4856f5;
   padding-left: 200px;
+  text-align: center;
+
+}
+
+/* queue */
+.ticketinfo{
+  color: black;
+  border-bottom: 2px solid;
+  border-color:black;
 }
