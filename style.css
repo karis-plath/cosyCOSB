@@ -210,4 +210,10 @@ html {
   color: #2d2d34;
   border-bottom: 2px solid;
   border-color:#2d2d34;
+  padding-left: 200px;
+}
+
+/* ticket detail */
+.ticketDetail{
+  padding-left: 200px;
 }
