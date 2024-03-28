@@ -42,7 +42,6 @@
 
         while($row = $result->fetch_assoc()) {
             echo '<a class = "ticketDetail" href="ticketDetails.php?id=' . $row['Ticket_ID'] . '"> <button>'. $row['Ticket_ID'] . $row['Status'] .  '</button></a><br><br>';
-            
         }
       } else {
         echo '<div class="ticketinfo">';

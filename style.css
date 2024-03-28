@@ -162,9 +162,16 @@ html {
 }
 
 /* ticket search  */
-.ticketinfo {
-  padding-left: 200px; /* Adjust the margin as needed */
+.ticketDetail button{
+  padding-left: 200px;
+  position: relative;
+  width: 75%;
+  height: 64px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
 
 /* docs page */
 .doc-button{
@@ -210,10 +217,12 @@ html {
   color: #2d2d34;
   border-bottom: 2px solid;
   border-color:#2d2d34;
-  padding-left: 200px;
+  
 }
 
 /* ticket detail */
 .ticketDetail{
   padding-left: 200px;
 }
+
+
