@@ -89,7 +89,6 @@ html {
 /* menu  */
 
 .sidenav {
-  
   height: 100%;
   width: 200px;
   background-color: #4856f5 !important;
@@ -98,6 +97,7 @@ html {
   top: 0;
   left: 0;
   overflow-x: hidden;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .sidenav a {
@@ -113,10 +113,30 @@ html {
   border-width: 1px;
 }
 
+.sidenav input{
+  padding: 16px;
+  width: 200px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffefd3;
+  background-color: #4856f5;
+  display: block;
+  text-align: center;
+  border-style:solid;
+  border-color: #4856f5;
+  border-width: 1px;
+}
+
 .sidenav a:hover {
   background-color: #727272;
   color: white;
 }
+
+.sidenav input:hover {
+  background-color: #727272;
+  color: white;
+}
+
 
 
 
@@ -161,15 +181,32 @@ html {
   background-color:#adb6c4;
 }
 
+
+
 /* ticket search  */
 .ticketDetail button{
-  padding-left: 200px;
-  position: relative;
   width: 75%;
   height: 64px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
+  border: none;
+}
+
+.ticketDetail{
+  width: 100%;
+  height: 64px;
+  border-radius: 20px;
+	display: inline-block;
+	padding: 5px 0px 5px 225px;
+  cursor: pointer;
+  border: none;
+}
+
+.ticketinfo{
+  color: #2d2d34;
+  border-bottom: 2px solid;
+  border-color:#2d2d34;
+  padding-left: 200px;
 }
 
 
@@ -192,9 +229,9 @@ html {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.doc-button:hover{
-  /* background-color: #4856f5; */
-}
+/* .doc-button:hover{
+  background-color: #4856f5;
+} */
 
 .doc_content{
   padding-left: 200px;
@@ -213,16 +250,9 @@ html {
 }
 
 /* queue */
-.ticketinfo{
+/* .ticketinfo{
   color: #2d2d34;
   border-bottom: 2px solid;
   border-color:#2d2d34;
-  
-}
-
-/* ticket detail */
-.ticketDetail{
-  padding-left: 200px;
-}
-
+} */
 

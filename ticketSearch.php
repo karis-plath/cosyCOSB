@@ -6,6 +6,7 @@
   <title>Tickets</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 <?php include ("menu.php")?>
   
