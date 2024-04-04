@@ -29,27 +29,29 @@
 
       // New code to fetch tickets for this employee
       $stmt = $conn->prepare("SELECT * FROM ticket WHERE Status != 'closed'");
-    //   $stmt->bind_param("i", $User_ID);
+
       $stmt->execute();
       $result = $stmt->get_result();
 
       if ($result->num_rows > 0) {
         // We have tickets for this employee
         echo '<div class="ticketinfo">';
-        echo "<h2>Open Tickets</h2>";
+        echo "<h1>Open Tickets</h1>";
         echo '</div>';
 
         while($row = $result->fetch_assoc()) {
-            echo '<div class="ticketinfo">';
-            echo "<p>Ticket ID: " . $row["Ticket_ID"] . " Importance: " . $row["Importance"] .  "</p>";
-            echo "<p>Queue: " . $row["Queue"] . " Create Date: " . $row["CreateDate"] .  "</p>";
-            echo "<p>Issue: " . $row["TicketDesc"] . " Email: " . $row["Email"] .  "</p>";
-            echo '</div>';
-            
+          echo '<a class="ticketDetail" href="ticketDetails.php?id=' . $row['Ticket_ID'] . '"><button>' . 
+          '<span style="margin-left: 20px; float: left;">' . $row['Ticket_ID'] . '</span>' . 
+          '<span style="margin-right: 20px; float: right;">' . $row["CreateDate"] . '</span>' .
+          '<span style="margin-right: 25px; float: right;">' . $row["Importance"] . '</span>' . 
+          '<span style="margin-right: 25px; float: right;">' . $row['Status'] . '</span>' . 
+          '<span style="margin-right: 25px; float: right;">' . $row["Queue"] . '</span>' . 
+           
+          '</button></a><br><br>';
         }
       } else {
         echo '<div class="ticketinfo">';
-        echo "You currently have no tickets.";
+        echo "There are currently no tickets in the queue";
         echo '</div>';
       }
 

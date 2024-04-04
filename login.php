@@ -2,13 +2,15 @@
  
     <head>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/cb5760a305.js" crossorigin="anonymous"></script>
         <title>Login</title>
     </head>
 
     <body class ="login">
         <div>
             <div class ="loginBox">
-                <h1>Login</h1>
+            <h1><i class="fa-solid fa-ticket fa-xl"></i></h1>
+                <h1>Tech-It</h1>
                 <form method=POST>
                     <div>
                         <input id="user" type="text" name="user" placeholder="Employee ID">

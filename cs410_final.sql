@@ -35,6 +35,22 @@ insert into `user` values(00000002, "Floop4Prez", "Robert", "California", 595555
 insert into `user` values(00000003, "SerialNum23", "Jared", "Ross", 5235550123, "jross@testmail.com", 'user');
 insert into `user` values(00000004, "Pass098", "Sophia", "Smith", 4565551233, "Sophia.Smith@testmail.com", 'user');
 insert into `user` values(00000005, "WeirdAlFan32", "Kristi", "Jones", 5955553312, "KrisJones@testmail.com", 'user');
+insert into `user` values(00000006, "ImSoKool420", "Kyle", "Kool", 5403304987, "KoolKyle@testmail.com", 'user');
+insert into `user` values(00000007, "Vietnam4Eva", "Kevin", "Hoang", 4082859387, "KHoang@testmail.com", 'user');
+insert into `user` values(00000008, "Blacksmithing11!", "Alec", "Steele", 3051932297, "Alec.Steele21@testmail.com", 'user');
+insert into `user` values(00000009, "Bikefanz32", "Cole", "Jay", 3395850339, "CJ4444@testmail.com", 'user');
+insert into `user` values(00000012, "Ninjago884", "Anna", "Frey", 5750264086, "FreyAnna@testmail.com", 'user');
+insert into `user` values(00000013, "ILOVETAYLORSWIFT18!", "Emily", "White", 8888888888, "TayTaySwifty@testmail.com", 'user');
+insert into `user` values(00000014, "KanyeIsLordAndSavior", "Wyatt", "Olsen", 6122320800, "KrisJones@testmail.com", 'user');
+insert into `user` values(00000015, "WeirdAlHater", "John", "Christian", 2133555595, "ChrisJones@testmail.com", 'user');
+
+insert into `user` values(00000110, "7777", "Billy", "Bob", 5075555639, "bBob@gmail.com", 'tech');
+insert into `user` values(00000111, "1278", "Kevin", "Costner", 2105558506, "kCostner@gmail.com", 'tech');
+insert into `user` values(00001000, "7856", "Lebron", "James", 5235859854, "lJames@gmail.com", 'tech');
+insert into `user` values(00001001, "9283", "Luke", "Skywalker", 5075554444, "lSkywalker@gmail.com", 'tech');
+insert into `user` values(00001010, "5778", "Craig", "Imm", 5079519452, "cImm@gmail.com", 'tech');
+insert into `user` values(00001011, "0567", "Kanye", "West", 3945550687, "kWest@gmail.com", 'tech');
+insert into `user` values(00001100, "4923", "Kirko", "Chainz", 5076178000, "kChainz@gmail.com", 'tech');
 
 insert into `user` values(00000001, "1234","Karis", "Plath", 9525551298,"kPlath@gmail.com", 'admin');
 insert into `user` values(00000010, "5678", "Ethan", "Imm", 5075559459, "eImm@gmail.com", 'admin');
