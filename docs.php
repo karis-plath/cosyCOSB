@@ -9,6 +9,7 @@
 <body>
     <!-- <?php include("connectionDB.php")?> -->
     <?php include ("menu.php")?>
+    <h1 class = "title">Documentation</h1>
     <?php
         if (isset($_SESSION["User_ID"])) {
             $User_ID = $_SESSION["User_ID"];
@@ -54,7 +55,7 @@
             <button type="submit" name="document_id" value="<?php echo $document['id']; ?>">
             <?php 
             
-                echo $document['doc_name'];
+                echo '<a>' . $document["doc_name"] . '</a>';
 
                 ?>  
             </button>
