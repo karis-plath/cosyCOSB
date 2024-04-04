@@ -77,8 +77,17 @@ CREATE TABLE if NOT EXISTS `ticket` (
   Primary Key(Ticket_ID),
   Foreign Key(UserID) References user(UserID)
 );
-
-insert into `ticket` (UserID, Importance, Queue, Status, CreateDate, CloseDate, TicketDesc, Email) values(00000001, 'High', 'new', 'new', '2024-02-29 13:00:12', NULL, "My computer is glued shut, I tried soaking it in water to soften the glue. Then I put it in rice and tried restarting it. Nothings working??!!!", "kPlath@gmail.com");
+INSERT INTO `ticket` (UserID, Importance, Queue, Status, CreateDate, TicketDesc, Email)
+VALUES
+	(00000001, 'High', 'new', 'new', '2024-03-29 13:00:12', "My computer is glued shut, I tried soaking it in water to soften the glue. Then I put it in rice and tried restarting it. Nothings working??!!!", 'kPlath@gmail.com'),
+	(00000002, 'High', 'new', 'new', '2024-03-25 8:00:12', 'Having trouble installing new software. Error message keeps popping up.', 'robcali@testmail.com'),
+	(00000003, 'Medium', 'new', 'new', '2024-04-01 9:00:12', 'Cannot connect to the internet. Tried restarting router but no luck.', 'jross@testmail.com'),
+	(00000004, 'Low', 'new', 'new', NOW(), 'Having trouble logging into my account. Password reset not working.', 'Sophia.Smith@testmail.com'),
+	(00000013, 'High', 'important', 'reopened', NOW(), 'Billing issue not resolved. Still seeing incorrect charges.', 'TayTaySwifty@testmail.com'),
+	(00000014, 'Medium', 'new', 'new', NOW(), 'Monitor flickering constantly. Worried it might be going bad.', 'KrisJones@testmail.com'),
+	(00000002, 'Medium', 'new', 'new', '2024-04-03 8:00:12', 'I no longer need help installing new software. My computer started on fire.', 'robcali@testmail.com'),
+	(00000003, 'Low', 'new', 'new', NOW(), 'My printer is not printing. I have tried restarting it.', 'jross@testmail.com'),
+	(00000004, 'High', 'closed', 'closed', NULL, 'I am getting popups for malware.', 'Sophia.Smith@testmail.com');
 
 -- --------------------------------------------------------------
 
