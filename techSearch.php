@@ -37,7 +37,7 @@
     <div class="main-content">
 
         <div class="Header">
-            <h1><b><u>Search Tickets or People</u></b></h1>
+            <h1>Search Tickets or People</h1>
         </div>
 
         <form method=POST>
@@ -85,7 +85,12 @@
                                         $Userid = $row['UserID'];
                                         $Usertype = $row['UserType'];
                                     
-                                        echo "<p>$Fname $Lname User ID: $Userid User Type: $Usertype </p>";
+                                        echo '<a class="ticketDetail"><button>' . 
+                                        '<span style="margin-left: 20px; float: left;">' . $row['UserID'] . '</span>' . 
+                                        '<span style="margin-right: 20px; float: right;">' . $row["UserType"] . '</span>' .
+                                        '<span style="margin-left: 25px; float: left;">' . $row["Fname"] . '</span>' . 
+                                        '<span style="margin-left: 25px; float: left;">' . $row['Lname'] . '</span>' .  
+                                        '</button></a><br>';
                                     }
                                 }
                                 else if ($selectedsearchby == 'option2'){
@@ -124,8 +129,14 @@
                                 $Status = $row['Status'];
                                 $CreateDate = $row['CreateDate'];
                             
-                                echo "<p>Ticket ID: $TID  User ID: $UserID Importance: $Importance Status: $Status Created: $CreateDate </p>";
-
+                                echo '<a class="ticketDetail" href="ticketDetails.php?id=' . $row['Ticket_ID'] . '"><button>' . 
+                                '<span style="margin-left: 20px; float: left;">' . $row['Ticket_ID'] . '</span>' . 
+                                '<span style="margin-right: 20px; float: right;">' . $row["CreateDate"] . '</span>' .
+                                '<span style="margin-right: 25px; float: right;">' . $row["Importance"] . '</span>' . 
+                                '<span style="margin-right: 25px; float: right;">' . $row['Status'] . '</span>' . 
+                                '<span style="margin-right: 25px; float: right;">' . $row["Queue"] . '</span>' . 
+                                
+                                '</button></a><br><br>';
                             }
                         }
                     }

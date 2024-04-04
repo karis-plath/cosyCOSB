@@ -1,5 +1,6 @@
 html {
   background: #f8fbff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
  
 /*login page*/
@@ -30,7 +31,7 @@ html {
 }
 
 .loginBox button{
-  background-color: #f8fbff;
+  background-color: #ffffff;
   border: none;
   color: rgb(0, 0, 0);
   padding: 12px 27px;
@@ -137,24 +138,24 @@ html {
   color: white;
 }
 
+h2{
+  margin-left: 15px;
+  font-size: 25px;
+  color: #ffefd3;
+}
 
 
 
 /* tech search  */
-
-.Header{
-  text-align: center;
-}
   
 .main-content {
   margin-left: 200px; /* Same width as sidenav */
   padding: 0px 20px;
-    
 }
 
 .searchbar{
-  text-align: center;
-  padding-top: 5%;
+
+  padding-top: 2%;
 }
 
 .labels{
@@ -169,12 +170,12 @@ html {
 
 .results p {
   height: 50px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   background-color: #ffefd3;
   border: 1px solid black;
   border-radius: 10px;
-  margin-left: 100px;
-  margin-right: 100px; 
+  /* margin-left: 100px;
+  margin-right: 100px;  */
 }
 
 .results p:hover{
@@ -247,7 +248,7 @@ html {
   }
 
 .doc-p{
-  color:blue;
+  color:#2d2d34;
   font-size:20px;
 }
 

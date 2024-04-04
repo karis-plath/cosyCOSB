@@ -36,7 +36,7 @@
       if ($result->num_rows > 0) {
         // We have tickets for this employee
         echo '<div class="ticketinfo">';
-        echo "<h2>Open Tickets</h2>";
+        echo "<h1>Open Tickets</h1>";
         echo '</div>';
 
         while($row = $result->fetch_assoc()) {
