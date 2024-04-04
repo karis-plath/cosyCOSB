@@ -55,7 +55,7 @@
             <button type="submit" name="document_id" value="<?php echo $document['id']; ?>">
             <?php 
             
-                echo '<a>' . $document["doc_name"] . '</a>';
+                echo '<h>' . $document["doc_name"] . '</h>';
 
                 ?>  
             </button>
