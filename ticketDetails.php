@@ -34,7 +34,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
 
 if ($id) {
     // Fetch additional details based on the ID
-    $sql = "SELECT * FROM ticket WHERE ticket.Ticket_ID = '$id'"; // Assuming your primary key column is named 'id'
+    $sql = "SELECT * FROM ticket WHERE ticket.Ticket_ID = '$id'"; 
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -50,7 +50,16 @@ if ($id) {
         echo "<p>Status: " . $row[4] . "</p>";
         echo "<p>Desc: " . $row[7] . "</p>";
         echo "<p>Email: " . $row[8] . "</p>";
+        echo '<form action="editTicket.php" method="post">';
+        echo '<input type="hidden" name="ticket_id" value="' . $row[0] . '">';
+        echo '<button type="submit">Edit Ticket</button>';
+        echo '</form>';
+        echo '<form action="close_ticket.php" method="post">';
+        echo '<input type="hidden" name="ticket_id" value="' . $row[0] . '">';
+        echo '<button type="submit">Close Ticket</button>';
+        echo '</form>';
         echo '</div>';
+
         
     } else {
         echo "Ticket not found.";
