@@ -23,7 +23,7 @@
                                 if (isset($_SESSION["User_ID"])) {
                                     $User_ID = $_SESSION["User_ID"];
                                 
-                                    // Now, retrieve the email from the database using the Employee ID
+                                    
                                     $servername = "localhost";
                                     $useraccount = "admin"; 
                                     $password = "admin"; 

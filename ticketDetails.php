@@ -32,11 +32,13 @@ if ($result->num_rows > 0) {
 // Get the ID from the query parameter
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
+
+
 if ($id) {
     // Fetch additional details based on the ID
     $sql = "SELECT * FROM ticket WHERE ticket.Ticket_ID = '$id'"; 
     $result = $conn->query($sql);
-    
+    $_SESSION['ticket_id'] = $id;
     if ($result->num_rows > 0) {
         $row = $result->fetch_row();
         // Display details
