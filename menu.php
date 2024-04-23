@@ -1,8 +1,12 @@
 <head>
-        <link rel="stylesheet" href="style.css">
-        <!-- link to icons -->
-        <script src="https://kit.fontawesome.com/cb5760a305.js" crossorigin="anonymous"></script>
-    </head>
+    <link rel="stylesheet" href="style.css">
+    <!-- link to icons -->
+    <script src="https://kit.fontawesome.com/cb5760a305.js" crossorigin="anonymous"></script>
+</head>
+
+<div class = "barUp">
+    <a>notif</a>
+</div>
 
 <div class="sidenav">
 <h2><i class="fa-solid fa-ticket fa-2xl" style="color: #ffffff;"></i>  Tech-It</h2>

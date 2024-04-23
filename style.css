@@ -2,7 +2,8 @@ html {
   background: #f8fbff;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
- 
+
+
 /*login page*/
 .login{
   text-align: center;
@@ -49,10 +50,6 @@ html {
 
 /* create Ticket  */
 
-.title{
-  padding-left: 200px;
-}
-
 .createTicket input{
   border-radius: 10px;
   padding: 10px;
@@ -88,6 +85,25 @@ html {
 
 
 /* menu  */
+
+.barUp {
+  z-index: 0;
+	background-color: #4856f5;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+  height: 8%;
+	top: 0;
+	position: fixed;
+	left: 0;
+}
+
+.title{
+  position: fixed;
+  z-index: 1;
+  padding-left: 210px;
+  color: #ffefd3;
+  padding-bottom: 20px;
+}
 
 .sidenav {
   height: 100%;
@@ -212,6 +228,11 @@ h2{
 
 
 /* docs page */
+
+.doc-bloc{
+  padding-top: 75px;
+}
+
 .doc-button{
   width: 100%;
   height: 64px;
@@ -222,7 +243,6 @@ h2{
   border: none;
 }
 
-/* docs page */
 .doc-button button{
   width: 75%;
   height: 64px;
@@ -239,6 +259,7 @@ h2{
 .doc_content{
   padding-left: 200px;
 }
+
 .doc-h{
   color: #2d2d34;
   font-size: 35px;

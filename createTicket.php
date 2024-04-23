@@ -12,7 +12,7 @@
 <div class="createTicket">
         <div>
             <div class="title">
-                <h1>Submit a ticket!</h1>
+                <h1>Submit a ticket</h1>
             </div>
             <div class="container">
                 <form action="createTicket.php" method="post">

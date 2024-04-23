@@ -33,12 +33,11 @@
 <body>
 
     <?php include ("menu.php")?>
+    <div class="title">
+        <h1>Search Tickets or People</h1>
+    </div>
     
     <div class="main-content">
-
-        <div class="Header">
-            <h1>Search Tickets or People</h1>
-        </div>
 
         <form method=POST>
             <div class="searchbar">
