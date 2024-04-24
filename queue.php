@@ -35,10 +35,11 @@
 
       if ($result->num_rows > 0) {
         // We have tickets for this employee
-        echo '<div class="ticketinfo">';
+        echo '<div class="title">';
         echo "<h1>Open Tickets</h1>";
         echo '</div>';
 
+        echo'<div class ="doc-bloc">';
         while($row = $result->fetch_assoc()) {
           echo '<a class="ticketDetail" href="ticketDetails.php?id=' . $row['Ticket_ID'] . '"><button>' . 
           '<span style="margin-left: 20px; float: left;">' . $row['Ticket_ID'] . '</span>' . 
@@ -54,6 +55,7 @@
         echo "There are currently no tickets in the queue";
         echo '</div>';
       }
+      '</div>';
 
       $stmt->close(); // Close the ticket retrieval statement
       $conn->close();

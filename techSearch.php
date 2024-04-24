@@ -105,7 +105,12 @@
                                         $Userid = $row['UserID'];
                                         $Usertype = $row['UserType'];
                                     
-                                        echo "<p>$Fname $Lname User ID: $Userid User Type: $Usertype </p>";
+                                        echo '<a class="ticketDetail"><button>' . 
+                                        '<span style="margin-left: 20px; float: left;">' . $row['UserID'] . '</span>' . 
+                                        '<span style="margin-right: 20px; float: right;">' . $row["UserType"] . '</span>' .
+                                        '<span style="margin-left: 25px; float: left;">' . $row["Fname"] . '</span>' . 
+                                        '<span style="margin-left: 25px; float: left;">' . $row['Lname'] . '</span>' .  
+                                        '</button></a><br>';
                                 }
 
                             }

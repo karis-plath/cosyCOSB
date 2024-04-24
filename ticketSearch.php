@@ -9,6 +9,9 @@
 
 <body>
 <?php include ("menu.php")?>
+  <div class="title">
+    <h1>Your Tickets</h1>
+  </div>
   
   <?php
     //error_reporting(E_ALL);
@@ -37,10 +40,8 @@
 
       if ($result->num_rows > 0) {
         // We have tickets for this employee
-        echo '<div class="ticketinfo">';
-        echo "<h1>Your Tickets</h1>";
-        echo '</div>';
 
+        echo'<div class ="doc-bloc">';
         while($row = $result->fetch_assoc()) {
           echo '<a class="ticketDetail" href="ticketDetails.php?id=' . $row['Ticket_ID'] . '"><button>' . 
           '<span style="margin-left: 20px; float: left;">' . $row['Ticket_ID'] . '</span>' . 
@@ -49,12 +50,13 @@
           '<span style="margin-right: 25px; float: right;">' . $row['Status'] . '</span>' . 
           '<span style="margin-right: 25px; float: right;">' . $row["Queue"] . '</span>' . 
            
-          '</button></a><br><br>';        }
+          '</button></a><br>';        }
       } else {
         echo '<div class="ticketinfo">';
         echo "You currently have no tickets.";
         echo '</div>';
       }
+      echo'</div>';
 
       $stmt->close(); // Close the ticket retrieval statement
       $conn->close();

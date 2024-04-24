@@ -59,6 +59,7 @@ html {
 
 .container{
   padding-left: 200px;
+  padding-top: 75px;
   font-size: 18px;
   text-align:left;
 }
@@ -75,8 +76,6 @@ html {
 }
 
 .createTicket{
-  padding-top: 0%;
-  padding-left: 25px;
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -166,11 +165,10 @@ h2{
   
 .main-content {
   margin-left: 200px; /* Same width as sidenav */
-  padding: 0px 20px;
+  padding: 75px 20px;
 }
 
 .searchbar{
-
   padding-top: 2%;
 }
 
