@@ -53,13 +53,15 @@
                 echo "<p>Status: " . $row[4] . "</p>";
                 echo "<p>Desc: " . $row[7] . "</p>";
                 echo "<p>Email: " . $row[8] . "</p>";
+                if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
+                    echo '<form action="close_ticket.php" method="post">';
+                    echo '<input type="hidden" name="ticket_id" value="' . $row[0] . '">';
+                    echo '<button type="submit">Close Ticket</button>';
+                    echo '</form>';
+                }
                 echo '<form action="editTicket.php" method="post">';
                 echo '<input type="hidden" name="ticket_id" value="' . $row[0] . '">';
                 echo '<button type="submit">Edit Ticket</button>';
-                echo '</form>';
-                echo '<form action="close_ticket.php" method="post">';
-                echo '<input type="hidden" name="ticket_id" value="' . $row[0] . '">';
-                echo '<button type="submit">Close Ticket</button>';
                 echo '</form>';
                 echo '</div>';
 
