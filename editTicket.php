@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php include ("menu.php")?>
+    <script src="notification.js"></script>
     <div class="createTicket">
         <div>
             <div class="title">
@@ -114,7 +115,7 @@
                                 echo '<br> <br>';
                                 echo '<textarea id="ticket_desc" name="ticket_desc" required>' . $ticket_desc . '</textarea>';
                                 echo '<br>';
-                                echo'<button type="submit" name="save_changes">Save Changes</button>';
+                                echo'<button type="submit" name="save_changes" onclick="saveChanges()">Save Changes</button>';
 
                                 if(isset($_POST['save_changes'])){
                                     $ticket_id = $_SESSION['ticket_id'];
