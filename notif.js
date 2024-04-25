@@ -1,20 +1,16 @@
-// Function to save changes
+// connects editTicket.php and menu
 function saveChanges(ticketNumber) {
-    // Your save changes logic here
-
-    // Example notification message and link
     var message = "An update has been made to ticket " + ticketNumber;
-    var link = "ticketDetails.php?id=" + ticketNumber; // Example link to the ticket
+    var link = "ticketDetails.php?id=" + ticketNumber;
     showNotification(message, link);
 }
 
 // Function to show the notification
 function showNotification(message, link) {
-    var notifications = JSON.parse(sessionStorage.getItem("notifications")) || []; // Retrieve notifications from session storage or initialize an empty array
-    notifications.unshift({ message: message, link: link }); // Add the new notification to the beginning of the array
-    sessionStorage.setItem("notifications", JSON.stringify(notifications)); // Store the updated notifications array in session storage
-
-    // Update the notifications container
+    // store notifs in session
+    var notifications = JSON.parse(sessionStorage.getItem("notifications")) || []; 
+    notifications.unshift({ message: message, link: link });
+    sessionStorage.setItem("notifications", JSON.stringify(notifications));
     updateNotificationsContainer();
 }
 
@@ -27,7 +23,7 @@ function updateNotificationsContainer() {
     // Retrieve notifications from session storage
     var notifications = JSON.parse(sessionStorage.getItem("notifications")) || [];
 
-    // Loop through the notifications and add them to the notifications container
+    // add each notif to container
     notifications.forEach(function(notification) {
         var notificationElement = document.createElement("a");
         notificationElement.href = notification.link;
@@ -37,21 +33,20 @@ function updateNotificationsContainer() {
     });
 }
 
-// Function to show the pop-up with notifications
+// creates pop-up for notifs
 function showNotificationsPopup() {
-    // Retrieve notifications from session storage
+    // Retrieve notifications
     var notifications = JSON.parse(sessionStorage.getItem("notifications")) || [];
 
-    // Create the pop-up element
+    // Create the pop-up
     var popup = document.createElement("div");
     popup.classList.add("popup");
 
-    // Create a close button for the pop-up
+    // Create a close button
     var closeButton = document.createElement("span");
     closeButton.classList.add("close");
-    closeButton.innerHTML = "&times;"; // Display 'x' for the close button
+    closeButton.innerHTML = "&times;";
     closeButton.onclick = function() {
-        // Close the pop-up when the close button is clicked
         document.body.removeChild(popup);
     };
     popup.appendChild(closeButton);
@@ -69,14 +64,12 @@ function showNotificationsPopup() {
         notificationsContainer.appendChild(notificationElement);
     });
 
-    // Append the notifications container to the pop-up
+    // add notifs to container
     popup.appendChild(notificationsContainer);
-
-    // Append the pop-up to the body
     document.body.appendChild(popup);
 }
 
-// Add event listener to the button to show the pop-up
+// listener for notif button
 document.getElementById("notifButton").addEventListener("click", showNotificationsPopup);
 
 
