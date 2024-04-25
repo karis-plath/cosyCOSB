@@ -143,9 +143,6 @@ html {
   background-color: #f0f0f0;
 }
 
-
-
-
 .title{
   position: fixed;
   z-index: 1;
@@ -332,10 +329,6 @@ h2{
   border: none;
   font-size: 20px;
 }
-
-/* .doc-button:hover{
-  background-color: #4856f5;
-} */
 
 .doc_content{
   padding-left: 200px;

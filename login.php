@@ -12,14 +12,9 @@
             <h1><i class="fa-solid fa-ticket fa-xl"></i></h1>
                 <h1>Tech-It</h1>
                 <form method=POST>
-                    <div>
-                        <input id="user" type="text" name="user" placeholder="Employee ID">
-                    </div>
-                    <div>
-                        <input id="pass" type="password" name="pass" placeholder="Password">
-                    </div>
+                    <input id="user" type="text" name="user" placeholder="Employee ID">
+                    <input id="pass" type="password" name="pass" placeholder="Password">
                     <button name="sub" type="submit">Login</button>
-                    <!-- <button name="submitNew" type="submit">Continue as Guest</button> -->
                 </form>
             </div>
         </div>

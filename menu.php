@@ -6,7 +6,7 @@
 
 <!-- top bar and notif button display -->
 <div class = "barUp">
-<button class = "notifButton" id="notifButton"><i class="fa-solid fa-bell fa-2xl" style="color: #ffffff;"></i></button>
+    <button class = "notifButton" id="notifButton"><i class="fa-solid fa-bell fa-2xl" style="color: #ffffff;"></i></button>
 </div>
 
 <!-- notification functionality -->
@@ -14,7 +14,8 @@
 <script> window.addEventListener("load", updateNotificationsContainer);</script>
 
 <div class="sidenav">
-<h2><i class="fa-solid fa-ticket fa-2xl" style="color: #ffffff;"></i>  Tech-It</h2>
+    <h2><i class="fa-solid fa-ticket fa-2xl" style="color: #ffffff;"></i>  Tech-It</h2>
+
     <?php
         session_start();
         if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){

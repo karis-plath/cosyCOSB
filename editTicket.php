@@ -8,7 +8,10 @@
 </head>
 <body>
     <?php include ("menu.php")?>
+
+    <!-- import notifications file -->
     <script src="notif.js"></script>
+
     <div class="createTicket">
         <div>
             <div class="title">
