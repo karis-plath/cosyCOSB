@@ -96,6 +96,48 @@ html {
 	left: 0;
 }
 
+.barUp i{
+  float: right;
+  padding-top: 40px;
+  padding-right: 20px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  float: right;
+  padding-right: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+
 .title{
   position: fixed;
   z-index: 1;
@@ -184,16 +226,49 @@ h2{
 
 .results p {
   height: 50px;
-  /* padding-left: 20px; */
   background-color: #ffefd3;
   border: 1px solid black;
   border-radius: 10px;
-  /* margin-left: 100px;
-  margin-right: 100px;  */
 }
 
 .results p:hover{
   background-color:#adb6c4;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.searchbar label {
+    margin-right: 10px;
+}
+
+.searchbar select,
+.searchbar input[type="search"],
+.searchbar input[type="submit"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.searchbar input[type="search"] {
+    flex-grow: 1;
+}
+
+.searchbar input[type="submit"] {
+    background-color: #4856f5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.searchbar input[type="submit"]:hover {
+    background-color: #727272;
 }
 
 

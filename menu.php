@@ -5,7 +5,14 @@
 </head>
 
 <div class = "barUp">
-    <a>notif</a>
+    <div class="dropdown">
+        <button onclick="showDropdown()" class="dropbtn"><i class="fa-solid fa-bell fa-2xl" style="color: #ffffff;"></i></button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
 </div>
 
 <div class="sidenav">
@@ -26,3 +33,25 @@
         <input type="submit" class="logoutBtn" name="logout" value="Logout"></input>
     </form>
 </div>
+
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function showDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+        }
+    }
+    }
+</script>
