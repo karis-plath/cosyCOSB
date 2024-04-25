@@ -2,18 +2,17 @@
     <link rel="stylesheet" href="style.css">
     <!-- link to icons -->
     <script src="https://kit.fontawesome.com/cb5760a305.js" crossorigin="anonymous"></script>
-        <!-- Include the notification.js file -->
-    <!-- <script src="notif.js"></script> -->
-    <!-- // Call updateNotificationsContainer when the page loads -->
-    <!-- <script> window.addEventListener("load", updateNotificationsContainer);</script> -->
-
 </head>
 
+<!-- top bar and notif button display -->
 <div class = "barUp">
-<button class = "notifButton" id="notifButton">Show Notifications</button>
+<button class = "notifButton" id="notifButton"><i class="fa-solid fa-bell fa-2xl" style="color: #ffffff;"></i></button>
 </div>
+
+<!-- notification functionality -->
 <script src="notif.js"></script>
 <script> window.addEventListener("load", updateNotificationsContainer);</script>
+
 <div class="sidenav">
 <h2><i class="fa-solid fa-ticket fa-2xl" style="color: #ffffff;"></i>  Tech-It</h2>
     <?php
@@ -21,7 +20,6 @@
         if($_SESSION['User_Type'] == 'admin' || $_SESSION['User_Type'] == 'tech'){
             echo '<a href="techSearch.php">Search</a>';
             echo '<a href="queue.php">Queue</a>';
-            
         }
     ?>
     
@@ -31,8 +29,4 @@
     <form action="logout.php" method="post">
         <input type="submit" class="logoutBtn" name="logout" value="Logout"></input>
     </form>
-
-    <!-- <div  id="notificationsContainer"> -->
-    <!-- Notifications will be displayed here -->
-    <!-- </div> -->
 </div>

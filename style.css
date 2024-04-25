@@ -86,7 +86,6 @@ html {
 /* menu  */
 
 .barUp {
-  z-index: 0;
 	background-color: #4856f5;
 	font-family: Arial, Helvetica, sans-serif;
 	width: 100%;
@@ -97,6 +96,9 @@ html {
 }
 
 .notifButton{
+  background-color: transparent;
+  border: transparent;
+  box-shadow: none;
   float: right;
   padding-top: 40px;
   padding-right: 20px;
@@ -131,7 +133,7 @@ html {
   display: block;
   padding: 10px;
   margin-bottom: 5px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 5px;
   text-decoration: none;
   color: #333;
