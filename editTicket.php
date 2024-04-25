@@ -133,7 +133,7 @@
                                       // Close the statement and connection
                                       $stmt->close();
                                       $conn->close();
-                                      header("Location: queue.php");
+                                    //   header("Location: queue.php");
 
                                 }
                             }
