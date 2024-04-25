@@ -124,8 +124,8 @@
              <label for="Category">Category: </label>
              <select id="category" name="category">
                     <option value="none">None</option>
-                    <option value="Placeholder2">Placeholder2</option>
-                    <option value="Placeholder3">Placeholder3</option>
+                    <option value="Placeholder2">Hardware</option>
+                    <option value="Placeholder3">Software</option>
                 </select>
             </div>
             <br>
