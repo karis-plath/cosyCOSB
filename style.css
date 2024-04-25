@@ -354,10 +354,21 @@ h2{
   font-size:20px;
 }
 
-/* queue */
-/* .ticketinfo{
-  color: #2d2d34;
-  border-bottom: 2px solid;
-  border-color:#2d2d34;
-} */
+/* Individual Ticket page */
+.ticketInst{
+  width: 100%;
+  height: 64px;
+  border-radius: 20px;
+	display: inline-block;
+	padding: 75px 0px 5px 225px;
+  cursor: pointer;
+  border: none;
+}
 
+.ticketInst button{
+  width: 75%;
+  height: 64px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}

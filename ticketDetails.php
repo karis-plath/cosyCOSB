@@ -6,6 +6,8 @@
 
 <?php include ("menu.php")?>
 
+<h1 class = "title">Ticket Details</h1>
+
 <?php
 $User_ID = $_SESSION["User_ID"];
 
@@ -42,8 +44,8 @@ if ($id) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_row();
         // Display details
-        echo '<div class="ticketDetail">';
-        echo "<h1>Details for Ticket: " . $row[0] . "</h1>";
+        echo '<div class="ticketInst">';
+        echo "<p>Ticket #" . $row[0] . "</p>";
         echo "<p>User: " . $row[1] . "</p>";
         echo "<p>Create: " . $row[5] . "</p>";
         echo "<p>Close: " . $row[6] . "</p>";
