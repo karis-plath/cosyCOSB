@@ -25,7 +25,6 @@
                             if(isset($_SESSION["User_ID"])) {
                                 $User_ID = $_SESSION["User_ID"];
                                 $ticket_id = $_SESSION['ticket_id'];
-                                // Now, retrieve the email from the database using the Employee ID
                                 $servername = "localhost";
                                 $useraccount = "admin"; 
                                 $password = "admin"; 
@@ -96,7 +95,6 @@
 
                                 // Close the statement and connection
                                 $stmt->close();
-                                //$conn->close();
 
                                 echo '<label for="email">Email:</label>';
                                 echo '<input type="email" id="email" name="email" value="' . $email . '" readonly>';
@@ -136,7 +134,6 @@
                                       // Close the statement and connection
                                       $stmt->close();
                                       $conn->close();
-                                    //   header("Location: queue.php");
 
                                 }
                             }

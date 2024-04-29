@@ -37,8 +37,6 @@
                                         die("Connection failed: " . $conn->connect_error);
                                     }
 
-                                    
-                                    //Retrieve First Name
                                     $stmt = $conn->prepare("SELECT Fname FROM user WHERE UserID = ?");
                                     $stmt->bind_param("i", $User_ID);
                                     $stmt->execute();
@@ -81,7 +79,6 @@
                                     // Close the statement and connection
                                     $stmt->close();
 
-                                    
                                     echo '<label for="email">Phone Number: </label>';
                                     echo '<input type="tel" id="phone" name="phone" value="' . $phone . '" readonly>';
 
@@ -96,7 +93,6 @@
 
                                     // Close the statement and connection
                                     $stmt->close();
-                                    //$conn->close();
 
                                     echo '<label for="email">Email:</label>';
                                     echo '<input type="email" id="email" name="email" value="' . $email . '" readonly>';
@@ -134,7 +130,6 @@
             <br>
         </div>
 </div>
-
 <?php
 // Check if the Employee is logged in
 if (isset($_SESSION["User_ID"])) {
